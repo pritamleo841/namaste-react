@@ -1,28 +1,42 @@
 import React from "react";
 import ReactDOM  from "react-dom/client";
+import logo from "./public/images/foodAppLogo.png";
 
-const parent = React.createElement("div",{id:"parent"},
-                [
-                    React.createElement("div",{id:"child"},
-                    [
-                        React.createElement("h1",{},"Namaste React"),
-                        React.createElement("h2",{},"H2 tag")
-                    ]
-                    ),
-                    React.createElement("div",{id:"child2"},
-                    [
-                        React.createElement("h1",{},"H1 tag"),
-                        React.createElement("h2",{},"H2 tag")
-                    ]
-                    )
-                ]
-            );
+const Header = () =>{
+    return (
+        <div className="header">
+            <div className="logo-container">
+                <img className="logo" src={logo} alt="logo"/>
+            </div>
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Cart</li>
+                    <li>Orders</li>
+                </ul>
+            </div>
+        </div>
+    )
+}
 
-// const heading = React.createElement("h1",{
-//     id:"header",
-//     xyz:"abc"
-// },"Hello World from React");
-// console.log(heading);
+const Body = ()=>{
+    return (
+        <div className="body-container">
+            <div className="search-bar">
+
+            </div>
+        </div>
+    )
+}
+
+const AppLayout = () =>{
+    return (
+        <div className="app">
+            <Header/>
+        </div>
+    )
+}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-//root.render(heading);
-root.render(parent);
+root.render(<AppLayout/>);
