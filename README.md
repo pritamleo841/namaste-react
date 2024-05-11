@@ -26,7 +26,7 @@
 # Two types of export/import
 - Named Export 
     export const NAME;
-    import {NAME} from '<path>'
+    import {NAME} from 'path'
 - Default Export
     export default NAME
-    import NAME frmo '<path>'
+    import NAME from 'path'
