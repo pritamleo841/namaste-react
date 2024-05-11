@@ -2,7 +2,8 @@
 1. Inception
 2. Igniting our App
 3. Laying the foundation
-4. Talk is cheap, show me the code - inprogress
+4. Talk is cheap, show me the code
+
 
 # Parcel
 - Dev build
