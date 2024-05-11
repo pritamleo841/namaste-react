@@ -22,3 +22,11 @@
 - Supports HTTPs
 - Tree shaking ( removes unused code )
 - Different builds for dev and production
+
+# Two types of export/import
+- Named Export 
+    export const NAME;
+    import {NAME} from '<path>'
+- Default Export
+    export default NAME
+    import NAME frmo '<path>'
