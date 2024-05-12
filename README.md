@@ -30,3 +30,8 @@
 - Default Export
     export default NAME
     import NAME from 'path'
+
+# React Hooks
+- Normal Javascript utility functions
+- useState() - superpowerful state variable
+- useEffect()
