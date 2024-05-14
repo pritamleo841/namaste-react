@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 const Body = () => {
   //local state variable
   const [listOfRestuarants, setListOfRestuarants] = useState([]);
+  const [searchText,setSearchText] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -23,6 +24,17 @@ const Body = () => {
   return listOfRestuarants.length===0?<Shimmer /> : ( 
     <div className="body">
       <div className="filter">
+      <div className="search">
+        <input type="text" className="search-box" value={searchText} onChange={(e)=>{
+          setSearchText(e.target.value);
+        }}/>
+        <button onClick={()=>{
+          const filteredList = listOfRestuarants.filter(
+            (res) => ((res.info.name).toLowerCase().includes(searchText.toLowerCase()))
+          );
+          setListOfRestuarants(filteredList);
+        }}>Search</button>
+      </div>
         <button
           className="filter-btn"
           onClick={() => {

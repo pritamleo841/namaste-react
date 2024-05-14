@@ -49,6 +49,9 @@
 .res-card-info>.other-info{
     line-height: 4px;
 }
+.filter{
+    display: flex;
+}
 .filter-btn{
     margin: 10px;
     cursor: pointer;
