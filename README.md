@@ -35,3 +35,7 @@
 - Normal Javascript utility functions
 - useState() - superpowerful state variable
 - useEffect()
+
+# Two types of routing in web apps
+- Client side routing(SPA)
+- Server side routing
