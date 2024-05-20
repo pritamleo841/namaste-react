@@ -39,3 +39,35 @@
 # Two types of routing in web apps
 - Client side routing(SPA)
 - Server side routing
+
+# Phases of contructor-render-componentDidMount cycle for parent and child1,child2 [Class component only]
+
+- Parent Ctor
+- Parent render
+   - child1 ctor
+   - child1 render
+   - child2 ctor
+   - child2 render
+   - child1 did Mount
+   - child2 did Mount
+- Parent didMount
+
+# Phases of contructor-render-componentDidMount-componentDidUpdate-componentWillMount for a parent and child1,child2 [Class component only]
+
+- Parent Ctor
+- Parent render
+  - child1 Ctor
+  - child1 render
+  - child2 Ctor
+  - child2 render
+- Parent componentDidMount
+  - child2 componentDidMount
+  - child2 render
+  - child2 componentDidUpdate
+
+  - child1 componentDidMount
+  - child1 render
+  - child1 componentDidUpdate
+
+  - child1 componentWillMount
+  - child2 componentWillMount

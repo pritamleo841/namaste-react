@@ -6,3 +6,6 @@ export const GET_EACH_RESTUARANT_URL = "https://www.swiggy.com/dapi/menu/pl?page
 {/*Email and Mobile Number*/}
 export const EMAIL_ID = "sharmapritam841@gmail.com";
 export const MOBILE_NO = 8274825938;
+
+{/**Github User API */}
+export const GIT_GET_USER_API = "https://api.github.com/users/pritamleo841";
