@@ -14,7 +14,7 @@ class AboutUs extends Component{
           <b>&nbsp;Pritam Sharma!</b>
         </p>
   
-        <UserClass name={"child1"} location={"Kolkata"}/>
+        <UserClass />
       </>
     );
   }

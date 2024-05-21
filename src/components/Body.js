@@ -3,6 +3,7 @@ import Shimmer from "./Shimmer";
 import {GET_RESTUARANT_URL} from "../utils/constants";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   //local state variable
@@ -21,6 +22,12 @@ const Body = () => {
     setListOfRestuarants(apiData);
     setFilteredResturant(apiData);
   };
+
+  //check online status - custom hook
+  const onlineStatus = useOnlineStatus();
+  if(onlineStatus===false){
+    return <h1>Looks like you're offline...Please check your internet connection 😀😀😀</h1>
+  }
 
   //Conditional Rendering
   return listOfRestuarants.length === 0 ? (

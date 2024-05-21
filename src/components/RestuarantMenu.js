@@ -1,23 +1,11 @@
-import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import useRestuarantMenu from "../utils/useRestuarantMenu";
 import Shimmer from "./Shimmer";
-import {GET_EACH_RESTUARANT_URL} from "../utils/constants";
 
 const RestuarantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
   const {resId} = useParams();
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-
-  console.log(GET_EACH_RESTUARANT_URL + resId);
-
-  const fetchMenu = async () => {
-    const data = await fetch(GET_EACH_RESTUARANT_URL + resId);
-    const jsonData = await data.json();
-    setResInfo(jsonData.data);
-  };
+  const resInfo = useRestuarantMenu(resId); //custom hook
 
   if (resInfo === null) {
     //since we are destructing below
