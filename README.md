@@ -71,3 +71,9 @@
 
   - child1 componentWillMount
   - child2 componentWillMount
+
+  # Lazy loading (Also known as)
+  - On demand loading
+  - Code spilliting
+  - Dynamic bundling
+  - Dynamic import
