@@ -16,9 +16,9 @@ const RestuarantCard = (props) => {
   const { slaString } = sla;
 
   return (
-    <div className="m-2 p-2 w-[300px] rounded-lg bg-gray-100 hover:bg-gray-200">
+    <div className="m-2 p-2 w-[240px] rounded-lg bg-gray-100 hover:bg-gray-200 flex flex-col items-center">
       <img
-        className="rounded-lg"
+        className="rounded-lg w-[200px] h-[200px]"
         src={CDN_URL + cloudinaryImageId}
         alt="res-logo"
       />

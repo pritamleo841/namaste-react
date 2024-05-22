@@ -13,7 +13,7 @@ class UserClass extends React.Component{
             }
         }
     }
-    //same as useEffect
+    //same effect as useEffect but have differences
     async componentDidMount(){
         const data = await fetch(GIT_GET_USER_API);
         const json = await data.json();

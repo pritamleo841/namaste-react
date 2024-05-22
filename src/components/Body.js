@@ -1,6 +1,6 @@
 import RestuarantCard from "./RestuarantCard";
 import Shimmer from "./Shimmer";
-import {GET_RESTUARANT_URL} from "../utils/constants";
+import { GET_RESTUARANT_URL } from "../utils/constants";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -25,7 +25,7 @@ const Body = () => {
 
   //check online status - custom hook
   const onlineStatus = useOnlineStatus();
-  if(onlineStatus===false){
+  if (onlineStatus === false) {
     return <h1>Looks like you're offline...Please check your internet connection 😀😀😀</h1>
   }
 
@@ -63,15 +63,14 @@ const Body = () => {
                 (res) => res.info.avgRating >= 4.5
               );
               setListOfRestuarants(filteredList);
-            }}
-            >
+            }}>
             Top Rated Restuarants
           </button>
         </div>
       </div>
-      <div className="flex flex-wrap justify-evenly">
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-4 m-4">
         {filteredResturant.map((restuarant) => (
-          <Link key={restuarant.info.id} to={"/restuarant/"+restuarant.info.id}><RestuarantCard resData={restuarant} /></Link>
+          <Link key={restuarant.info.id} to={"/restuarant/" + restuarant.info.id}><RestuarantCard resData={restuarant} /></Link>
         ))}
       </div>
     </div>
