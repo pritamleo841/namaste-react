@@ -16,18 +16,18 @@ const RestuarantCard = (props) => {
   const { slaString } = sla;
 
   return (
-    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
+    <div className="m-2 p-2 w-[300px] rounded-lg bg-gray-100 hover:bg-gray-200">
       <img
-        className="res-logo"
+        className="rounded-lg"
         src={CDN_URL + cloudinaryImageId}
         alt="res-logo"
       />
       <div className="res-card-info">
         <div className="heading">
-          <h3>{name}</h3>
-          <h4>{cuisines.join(", ")}</h4>
+          <h3 className="font-bold py-2 text-lg">{name}</h3>
         </div>
         <div className="other-info">
+          <h4>{cuisines.join(", ")}</h4>
           <h4>{locality}</h4>
           <h4>{avgRating}</h4>
           <h4>{costForTwo}</h4>
