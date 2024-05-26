@@ -1,4 +1,4 @@
-import RestuarantCard from "./RestuarantCard";
+import RestuarantCard,{withVegLabel} from "./RestuarantCard";
 import Shimmer from "./Shimmer";
 import { GET_RESTUARANT_URL } from "../utils/constants";
 import { useState, useEffect } from "react";
@@ -10,6 +10,9 @@ const Body = () => {
   const [listOfRestuarants, setListOfRestuarants] = useState([]);
   const [filteredResturant, setFilteredResturant] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  console.log('list',listOfRestuarants);
+  const RestuarantCardIsVeg = withVegLabel(RestuarantCard);
 
   useEffect(() => {
     fetchData();
@@ -70,7 +73,9 @@ const Body = () => {
       </div>
       <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-4 m-4">
         {filteredResturant.map((restuarant) => (
-          <Link key={restuarant.info.id} to={"/restuarant/" + restuarant.info.id}><RestuarantCard resData={restuarant} /></Link>
+          <Link key={restuarant.info.id} to={"/restuarant/" + restuarant.info.id}>
+            {restuarant.info.veg ? (<RestuarantCardIsVeg resData={restuarant}></RestuarantCardIsVeg>):(<RestuarantCard resData={restuarant} />)}
+          </Link>
         ))}
       </div>
     </div>

@@ -39,4 +39,17 @@ const RestuarantCard = (props) => {
   );
 };
 
+//higher order component
+//input - RestuarantCard,output - Enchanced component
+export const withVegLabel = (RestuarantCard)=>{
+  return (props)=>{ //enhanced-component
+    return (
+      <div>
+        <label className="absolute bg-white text-green-600 rounded m-1 p-1">Pure Veg🌿</label>
+          <RestuarantCard {...props}/>
+      </div>
+    )
+  }
+}
+
 export default RestuarantCard;
