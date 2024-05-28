@@ -1,11 +1,13 @@
 import logo from "../../public/images/foodAppLogo.png";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [btnName,setBtnName] = useState("Login");
   const onlineStatus = useOnlineStatus();
+  const {loggedInUser} = useContext(UserContext);
 
   return (
     <div className="flex justify-between mb-2 px-2 shadow-lg bg-white">
@@ -30,6 +32,7 @@ const Header = () => {
             <Link to="/grocery">Grocery</Link>
           </li>
           <button className="login-btn" onClick={()=>btnName==="Login"?setBtnName("Logout"):setBtnName("Login")}>{btnName}</button>
+          <li className="px-4 font-bold">{loggedInUser}</li>
         </ul>
       </div>
     </div>

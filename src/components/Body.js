@@ -1,15 +1,17 @@
 import RestuarantCard,{withVegLabel} from "./RestuarantCard";
 import Shimmer from "./Shimmer";
 import { GET_RESTUARANT_URL } from "../utils/constants";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   //local state variable
   const [listOfRestuarants, setListOfRestuarants] = useState([]);
   const [filteredResturant, setFilteredResturant] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const {loggedInUser,setUserName} = useContext(UserContext);
 
   console.log('list',listOfRestuarants);
   const RestuarantCardIsVeg = withVegLabel(RestuarantCard);
@@ -69,6 +71,10 @@ const Body = () => {
             }}>
             Top Rated Restuarants
           </button>
+        </div>
+        <div className="flex items-center">
+          <label>User Name</label>
+          <input value={loggedInUser} className="border border-black p-1 m-1" onChange={(e)=>setUserName(e.target.value)}/>
         </div>
       </div>
       <div className="grid grid-cols-[repeat(auto-fill,minmax(240px,1fr))] gap-4 m-4">
