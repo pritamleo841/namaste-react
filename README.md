@@ -77,3 +77,12 @@
   - Code spilliting
   - Dynamic bundling
   - Dynamic import
+
+  # Redux toolkit
+
+  - Install @reduxjs/toolkit and react-redux
+  - Build our store
+  - Connect out store to our app
+  - Create a Cart Slice
+  - Dispatch action
+  - Read data using Selector

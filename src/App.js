@@ -14,6 +14,11 @@ import UserContext from "./utils/UserContext";
 //lazy loading - on demand loading/code spilliting/dynamic bundling/dynamic import
 const Grocery = lazy(()=>import("./components/Grocery"));
 
+//redux imports
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
+
 const AppLayout = () => {
 
   const [userName,setUserName] = useState();
@@ -26,12 +31,14 @@ const AppLayout = () => {
   },[]);
 
   return (
-    <UserContext.Provider value={{loggedInUser:userName, setUserName}}>
-      <div className="app">
-        <Header />
-        <Outlet />
-      </div>
-    </UserContext.Provider>
+    <Provider store={appStore}>
+         <UserContext.Provider value={{loggedInUser:userName, setUserName}}>
+          <div className="app">
+            <Header />
+            <Outlet />
+          </div>
+        </UserContext.Provider>
+    </Provider>
   );
 };
 
@@ -55,6 +62,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/restuarant/:resId",
         element: <RestuarantMenu />,
+      },
+      {
+        path:"/cart",
+        element:<Cart />
       },
       {
         path: "/grocery",

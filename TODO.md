@@ -2,6 +2,7 @@
 - 1. Check out why Top resturant options is not working? Give a better UX for this feature.
 - 2. Beautify RestuarantMenu component.
 - 3. Make the header sticky.
+- 5. Accprdion click on Restuarant Menu List
 
 
 # Completed
