@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice,current } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
   name: "cart",
@@ -17,8 +17,9 @@ const cartSlice = createSlice({
       //state.items.filter(item => item.id !== action.payload.id);
     },
     clearCart: (state) => {
-      state.items.length = 0;
-    },
+      console.log(current(state)); //current(state) shows original state variables in array form
+      state.items.length = 0; //or return {items : []}
+    }
   },
 });
 
