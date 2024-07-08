@@ -86,3 +86,17 @@
   - Create a Cart Slice
   - Dispatch action
   - Read data using Selector
+
+  # Types of testing (developer)
+- Unit Testing
+- Integration Testing
+- End to End Testing(requires tools)
+
+# Setting up testing in out app 
+- Install React testing library
+- Installed Jest
+- Installed babel dependencies for using jest with babel
+- Configure babel in out app
+- Configure parcel config to disable default babel transpilation
+- Jest configuration(npx jest --init)
+- install jsdom library (because jest version > 28)

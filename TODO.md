@@ -3,6 +3,8 @@
 - 2. Beautify RestuarantMenu component.
 - 3. Make the header sticky.
 - 5. Accprdion click on Restuarant Menu List
+- 6. Set up delete from cart and clear cart
+- 7. Create a register and login page using formik library for forms
 
 
 # Completed
