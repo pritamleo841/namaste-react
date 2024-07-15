@@ -100,3 +100,4 @@
 - Configure parcel config to disable default babel transpilation
 - Jest configuration(npx jest --init)
 - install jsdom library (because jest version > 28)
+- __add__ => dundar method
